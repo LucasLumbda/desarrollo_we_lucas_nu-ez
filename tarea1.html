@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades Extracurriculares DCC</title>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="main-container">       
+        
+    <header>
+        <h1>Registro de Actividades Extracurriculares DCC</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="lista.html" class="boton-redireccion">Accede al listado de miembros!</a><br>
+            </li>
+            <li>
+                <a href="graficos.html" class="boton-redireccion">Accede a las estadisticas!</a>
+            </li>
+        </ul>
+    </nav>    
+
+    <div id="val-box" hidden>
+        <h2 id="val-msg"></h2>
+        <ul id="val-list"></ul>
+    </div>   
+
+    <form id="form-actividad">
+        <div>
+            <label for="nombre-apellido">Nombre y Apellidos:</label>
+            <input type="text" id="nombre-apellido" placeholder="Escriba su nombre completo aqui" minlength="15" maxlength="80"><br>
+                
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" palceholder="Escriba su numero de telefono aqui" minlength="8" required><br>
+        
+            <label for="mail">Correo electronico:</label>
+            <input type="text" id="mail" placeholder="Escriba su correo electronico aqui" minlength="15" required><br>
+
+            <label for="tipo-usuario">Usted es:</label>
+            <select id="tipo-usuario">
+                <option value="">-- Seleccione --</option>
+                <option value="funcionario">Funcionario</option>
+                <option value="estudiante pre-grado">Estudiante de pre grado</option>
+                <option value="estudiante post-grado">Estudiante de post grado</option>
+                <option value="academico">Academico</option>
+            </select><br>
+
+            <label for="numero-actividad">Seleccione numero de actividades extracurriculares que realiza a la semana</label>            <!-- Hacer que al seleccionar el numero, se abra la cantidad de casillas correspondientes para rellenar con la actividad (requiere .js)-->
+            <select id="numero-actividad">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select><br>
+
+            <div id="info-actividad">
+                <!-- Revisar n-actividades.js-->
+            </div>
+
+            <label for="archivo-actividad">Ingrese una o mas imagenes/videos de sus actividades (puede ser tanto suyo como no)</label>         <!-- Hacer una funcion en javascript que solo permita que pueda subir archivos de imagenes/videos -->
+            <input type="file" id="archivo-actividad" multiple accept="image/*,video/*"><br>
+
+            <label for="enlace-actividad">Ingrese un enlace relacionado a su actividad</label>
+            <input type="url" id="enlace-actividad"><br>                                                                                        <!-- Hacer una funcion en js que valide que sea un enlace -->
+
+            <button id="submit-btn" type="button">Enviar</button><br>
+        </div>
+    </form>    
+    <script src="validaciones.js"></script>
+    <script src="n-actividades.js"></script>
+    </div>
+
+</body>
+</html>
