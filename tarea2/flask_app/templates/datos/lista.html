@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de datos</title>
+
+    <link rel="stylesheet" href="estilo_lista.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Listado de miembros</h1>
+        </header>
+
+        <div class="ordenador">
+            <aside>
+                <label for="ordenar-por">Ordenar por:</label>
+                <select id="ordenar-por">
+                    <option value="nombre">Nombre</option>
+                    <option value="mail">Email</option>
+                    <option value="celular">Numero de Telefono</option>
+                    <option value="ocupacion">Ocupacion</option>
+                    <option value="tipoActividad">Tipo de Actividad</option>
+                </select>
+            
+
+                <label for="direccion-orden">Direccion:</label>
+                <select id="direccion-orden">
+                    <option value="asc">Ascendente</option>
+                    <option value="desc">Descendente</option>
+                </select>
+            
+                <button id="btn-ordenar">Ordenar</button>
+            </aside>
+        </div>
+    </div>
+
+    <div class="tabla-container">
+        <table id="tabla-de-datos">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>Funcion</th>
+                    <th>Tipo de Actividad</th>
+                    <th>Nombre Actividad</th>
+                </tr>
+            </thead>
+            <tbody id="body-tabla">
+                <!-- Los datos se pondran aqui-->
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <ul>
+            <li>
+                <a href="tarea1.html" class="boton-redireccion">Ir al registro</a>
+            </li>
+            <li>
+                <a href="graficos.html" class="boton-redireccion">Ir a las estadisticas</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="lista.js"></script>
+</body>
+</html>

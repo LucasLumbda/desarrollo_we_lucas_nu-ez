@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficos</title>
+
+    <link rel='stylesheet' href="estilo_estadisticas.css">
+</head>
+<body>
+    <div>
+        <h1>Estadisticas</h1>
+        <img src="Screenshot_1111.png" alt="Usuarios por año de la pagina de actividades extracurriculares"><br>
+        <h3>Usuarios por año de la pagina de actividades extracurriculares</h3><br>
+        <img src="grafico pastel.png" alt="Porcentaje de registro de cada tipo de actividad"><br>
+        <h3>Porcentaje de registro de cada tipo de actividad</h3>
+    </div>
+    <footer>
+        <ul>
+            <li>
+                <a href="{{ url_for('register')}}" class="boton-redireccion">Ir al registro</a>
+            </li>
+            <li>
+                <a href="{{ url_for('lista')}}" class="boton-redireccion">Ir al listado de miembros</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
