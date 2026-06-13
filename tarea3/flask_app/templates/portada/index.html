@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo_portada.css')}}">
+</head>
+<body>
+    <div class="main-container">
+
+    <header>
+        <h1>Bienvenido a la tarea 2 de Webs</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('register') }}">Registrar miembro y actividades</a><br>
+            </li>
+            <li>
+                <a href="{{ url_for('lista')}}">Ver listado de miembros y estadisticas</a><br>
+            </li>
+            <li>
+                <a href="{{ url_for('estadisticas') }}">Ver estadisticas</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="ultimos-miembros">
+        <ul>
+            
+        </ul>
+    </div>
+    </div>
+</body>
+</html>

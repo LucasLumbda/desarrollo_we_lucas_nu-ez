@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividades Extracurriculares DCC</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css')}}">
+</head>
+<body>
+    <div class="main-container">       
+        
+    <header>
+        <h1>Registro de Actividades Extracurriculares DCC</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('lista') }}" class="boton-redireccion">Accede al listado de miembros!</a><br>
+            </li>
+            <li>
+                <a href="{{ url_for('estadisticas')}}" class="boton-redireccion">Accede a las estadisticas!</a>
+            </li>
+        </ul>
+    </nav>    
+
+    <div id="val-box" hidden>
+        <h2 id="val-msg"></h2>
+        <ul id="val-list"></ul>
+    </div>   
+
+    <form id="form-actividad" method="post" action="{{ url_for('register') }}" enctype="multipart/form-data">
+        <div>
+            <label for="nombre-apellido">Nombre y Apellidos:</label>
+            <input type="text" id="nombre-apellido" name="nombre-apellido" placeholder="Escriba su nombre completo aqui" maxlength="80"><br>
+                
+            <label for="celular">Celular:</label>
+            <input type="text" id="celular" name="celular" palceholder="Escriba su numero de telefono aqui" minlength="8" required><br>
+        
+            <label for="mail">Correo electronico:</label>
+            <input type="text" id="mail" name="mail" placeholder="Escriba su correo electronico aqui" minlength="15" required><br>
+
+            <label for="tipo-usuario">Usted es:</label>
+            <select id="tipo-usuario" name="tipo-usuario">
+                <option value="">-- Seleccione --</option>
+                <option value="funcionario">Funcionario</option>
+                <option value="estudiante pre-grado">Estudiante de pre grado</option>
+                <option value="estudiante post-grado">Estudiante de post grado</option>
+                <option value="academico">Academico</option>
+            </select><br>
+
+            <label for="region">Seleccione su region:</label>
+            <select id="region" name="region">
+                {% for region in regiones %}
+                    <option value="{{ region.id }}"> {{ region.nombre }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="comuna">Seleccione su comuna</label>
+            <select id="comuna" name="comuna">
+                <!-- Revisar region-comuna -->    
+            </select>
+            
+
+            <label for="numero-actividad">Seleccione numero de actividades extracurriculares que realiza a la semana</label>            <!-- Hacer que al seleccionar el numero, se abra la cantidad de casillas correspondientes para rellenar con la actividad (requiere .js)-->
+            <select id="numero-actividad" name="numero-actividad">
+                <option value="" >-- Seleccione --</option>
+                <option value="1" >1</option>
+                <option value="2" >2</option>
+                <option value="3" >3</option>
+            </select><br>
+
+            <div id="info-actividad">                                                                                       <!-- Reescribir esta parte para 3 actividades -->
+                <!-- Revisar n-actividades.js-->                                                                            <!-- Si no funciona ocupar javascript nomah -->
+                                                                                                                            <!-- Cambiar hora inicio y hora fin por hora inicio y duracion -->
+                                                                                                                            <!-- Tambien añadir una descripcion de la actividad -->
+            </div>
+
+            <label for="archivo-actividad">Ingrese una o mas imagenes/videos de sus actividades (puede ser tanto suyo como no)</label>         
+            <input type="file" id="archivo-actividad" name="archivo-actividad" multiple accept="image/*,video/*"><br>
+
+            <label for="enlace-actividad">Ingrese un enlace relacionado a su actividad</label>
+            <input type="url" id="enlace-actividad" name="enlace-actividad"><br>                                                                                        
+
+            <button id="submit-btn" type="submit">Enviar</button><br>
+        </div>
+    </form>    
+    <script src="{{ url_for('static', filename='js/validaciones.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/n-actividades.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/region_comuna.js') }}"></script>
+    </div>
+
+</body>
+</html>

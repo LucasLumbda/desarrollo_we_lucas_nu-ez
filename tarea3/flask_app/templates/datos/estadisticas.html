@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficos</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>                 <!-- SEÑALAR EN EL README QUE OCUPO JQUERY-->
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+    <!-- <link rel='stylesheet' href="estilo_estadisticas.css"> -->
+</head>
+<body>
+    <div id="graficoMiembroPorDia"></div>
+    <div id="graficoActPorTipo"></div>
+    <div id="graficoActPorComuna"></div>
+    <footer>
+        <ul>
+            <li>
+                <a href="{{ url_for('register')}}" class="boton-redireccion">Ir al registro</a>
+            </li>
+            <li>
+                <a href="{{ url_for('lista')}}" class="boton-redireccion">Ir al listado de miembros</a>
+            </li>
+        </ul>
+    </footer>
+    <script src="{{ url_for('static', filename='js/estadisticas.js') }}"></script>
+</body>
+</html>
