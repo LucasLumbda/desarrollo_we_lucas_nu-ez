@@ -1,0 +1,12 @@
+<div th:fragment="caja-actividad">
+    <ul>
+        <li th:each="act : ${lista_actividades}">
+            <span th:text="${act.getMiembro()}"></span>
+            <span th:text="${act.dia}"></span>
+            <span th:text="${act.tipo}"></span>
+            <span th:text="${act.getComuna()}"></span>
+            <span th:text="${act.nombre}"></span>
+            <span th:text="${act.descripcion}"></span>
+        </li>
+    </ul>
+</div>

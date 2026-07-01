@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda de actividades</title>
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Buscador de actividades</h1>
+        </header>
+
+        <div>
+            <label for="busqueda">Inserte lo que desea buscar</label>
+            <input type="text" id="busqueda-actividad" oninput="buscarPorFrase(this.value)"><br>
+        </div>
+
+        <div th:replace="~{fragments/cajaActividad :: caja-actividad}"></div>
+    </div>
+</body>
+</html>
